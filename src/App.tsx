@@ -2,7 +2,7 @@
 function App() {
   return (
     <>
-      <div className="text-8xl">Lokoja Lamska</div>
+      <div className="text-8xl">Imela Lamsaa</div>
     </>
   )
 }
