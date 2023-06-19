@@ -7,11 +7,11 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
+    //no emit to false
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react-jsx",
 
     /* Linting */
