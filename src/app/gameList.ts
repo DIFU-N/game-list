@@ -6,15 +6,16 @@ const initialState = {
     gameList: [],
     error: '',
 }
-
+const apiKey = process.env.REACT_APP_API_KEY;
 export const fetchGameList = createAsyncThunk('gameList/fetchGameList', async () => {
     const options = {
         headers: {
-            // 'X-RapidAPI-Key': apiKey,
-            'X-RapidAPI-Host': 'public-holiday.p.rapidapi.com'
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
-    const response = await axios.get('', options);
+    const response = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/games', options);
+    console.log(response.data);
     return response.data;
 })
 

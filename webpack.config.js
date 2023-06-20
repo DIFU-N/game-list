@@ -1,7 +1,17 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
-import autoprefixer from 'autoprefixer';
-import tailwindcss from 'tailwindcss';
+import dotenv from 'dotenv';
+import webpack from 'webpack';
+
+// Load environment variables from .env file
+const env = dotenv.config().parsed;
+
+// Create an object with the values of the environment variables
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,8 +50,15 @@ export default {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    fallback: {
+      path: false,
+      os: false,
+      crypto: false,
+    },
   },
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin(envKeys),
+  ],
   devServer: {
     static: {
       directory: path.resolve(__dirname), // Set the root folder as the static directory
