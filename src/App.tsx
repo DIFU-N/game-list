@@ -1,10 +1,17 @@
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
-    <>
-      <div className="text-8xl">Imela Lamsaa</div>
-    </>
-  )
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
 
-export default App
+export default App;
