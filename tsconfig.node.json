@@ -1,5 +1,7 @@
 {
+  //this is where the jsx react thing should be called.
   "compilerOptions": {
+    "jsx": "react",
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
