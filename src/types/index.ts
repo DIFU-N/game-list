@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type Game = {
   id: number;
   title: string;
@@ -16,6 +18,16 @@ export interface RootState {
   gameList: {
     loading: boolean,
     gameList: Game[],
-    error: string;
+    error: string
   };
+}
+
+export interface ThemeType {
+  theme: {
+    currentTheme: string
+  }
+}
+
+export interface ThemeProviderProps {
+  children: ReactNode;
 }
