@@ -5,12 +5,14 @@ import GameCard from "../../components/GameCard"
 const GameList = () => {
   const gameListError = useSelector((state: RootState) => state.gameList.error)
   const gameListArr = useSelector((state: RootState) => state.gameList.gameList)
+  
+  
   if (gameListError) {
     return (
       <p>Unable to fetch games</p>
     )
   }
-  if (gameListArr?.length) {
+  if (gameListArr.length === 0) {
     return (
       <p>No games available</p>
     )

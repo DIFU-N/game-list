@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { Game } from '../types';
 
 const initialState = {
     loading: false,
-    gameList: [],
+    gameList: [] as Game[],
     error: '',
 }
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -29,7 +30,7 @@ const gameListSlice = createSlice({
         })
         builder.addCase(fetchGameList.fulfilled, (state, action) => {
             state.loading = false
-            state.gameList = action.payload
+            state.gameList = [...action.payload]
             state.error = ''
         })
         builder.addCase(fetchGameList.rejected, (state, action) => {
