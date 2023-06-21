@@ -1,3 +1,4 @@
+import React from "react";
 import { Game } from "../types";
 import { NavLink } from "react-router-dom";
 
