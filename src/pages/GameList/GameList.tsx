@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux"
 import { RootState } from "../../types"
 import GameCard from "../../components/GameCard"
-import React from "react"
 
 const GameList = () => {
   const gameListError = useSelector((state: RootState) => state.gameList.error)

@@ -1,4 +1,3 @@
-import React from "react"
 import DarkMode from "../../components/DarkMode"
 
 const HomePage = () => {

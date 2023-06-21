@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchGameList } from "./app/gameList";
 import { AppDispatch } from "./app/store";
-import React from "react";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();

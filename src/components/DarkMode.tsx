@@ -1,4 +1,3 @@
-import React from "react";
 import Sun from "../style/DarkMode/Sun";
 import Moon from "../style/DarkMode/Moon";
 import "../style/DarkMode/DarkMode.css";
