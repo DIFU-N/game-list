@@ -1,8 +1,12 @@
 import React from "react"
+import DarkMode from "../../components/DarkMode"
 
 const HomePage = () => {
   return (
-    <div>Home</div>
+    <div>
+      <div><DarkMode /></div>
+      Home
+    </div>
   )
 }
 
