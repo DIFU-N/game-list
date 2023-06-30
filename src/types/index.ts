@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
 export type Game = {
   id: number;
@@ -18,7 +18,9 @@ export interface RootState {
   gameList: {
     loading: boolean,
     gameList: Game[],
-    error: string
+    error: string,
+    onFilterChange: (e: ChangeEvent<HTMLFormElement>) => void,
+    filter: Filter
   };
 }
 
@@ -30,4 +32,11 @@ export interface ThemeType {
 
 export interface ThemeProviderProps {
   children: ReactNode;
+}
+
+export type Filter = {
+  platform?: string,
+  category?: string,
+  tag?: string,
+  sortBy?: string
 }
